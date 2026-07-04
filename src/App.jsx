@@ -4,6 +4,7 @@ import Reframe from './components/Reframe'
 import Calculator from './components/Calculator'
 import Curriculum from './components/Curriculum'
 import HowItWorks from './components/HowItWorks'
+import AboutYuval from './components/AboutYuval'
 import Testimonials from './components/Testimonials'
 import Offer from './components/Offer'
 import LeadForm from './components/LeadForm'
@@ -27,6 +28,7 @@ export default function App() {
         <Curriculum />
         <Calculator />
         <HowItWorks />
+        <AboutYuval />
         <Testimonials />
         <Offer />
         {showLeadForm && <LeadForm />}
