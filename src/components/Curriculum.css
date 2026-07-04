@@ -1,0 +1,121 @@
+.curriculum {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.module {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* accent rail on the inline-start edge */
+.module::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  background: var(--primary);
+  opacity: 0.85;
+}
+
+.module:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.module__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.module__num {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  background: var(--accent-soft);
+  border-radius: 12px;
+}
+
+.module__tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.module__title {
+  font-size: 1.18rem;
+  margin: 4px 0 0;
+}
+
+.module__body {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 720px) {
+  .curriculum {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .module {
+    padding: 32px;
+  }
+
+  .module__title {
+    font-size: 1.28rem;
+  }
+
+  .module__body {
+    font-size: 1.05rem;
+  }
+
+  /* Feature the first module across the full width — clear hierarchy. */
+  .module:first-child {
+    grid-column: 1 / -1;
+    background: linear-gradient(150deg, #fff, var(--accent-soft));
+  }
+
+  .module:first-child .module__title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .curriculum {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .module:first-child {
+    grid-column: span 1;
+    background: var(--surface);
+  }
+
+  .module:first-child .module__title {
+    font-size: 1.18rem;
+  }
+}

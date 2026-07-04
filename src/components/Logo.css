@@ -1,0 +1,61 @@
+/* Real logo image (public/logo.png) */
+.logo-img {
+  height: clamp(2.8rem, 6vw, 3.8rem);
+  width: auto;
+  display: block;
+  /* keep raster logos crisp */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.logo-img--sm {
+  height: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--ink);
+  line-height: 0.86;
+  font-weight: 300;
+  --logo-size: 2.6rem;
+}
+
+.logo--sm {
+  --logo-size: 1.6rem;
+}
+
+.logo--light {
+  color: #fbf3ea;
+}
+
+.logo__row {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.logo__profit {
+  font-size: var(--logo-size);
+  letter-spacing: 0.1em;
+  /* room on the right for the arrow so it isn't clipped */
+  padding-inline-end: calc(var(--logo-size) * 0.55);
+}
+
+.logo__boost {
+  font-size: calc(var(--logo-size) * 0.62);
+  letter-spacing: 0.24em;
+  align-self: flex-end;
+  margin-top: 0.14em;
+  /* nudge under the FIT so it sits like the original lockup */
+  margin-inline-end: 0.1em;
+}
+
+.logo__spark {
+  position: absolute;
+  top: calc(var(--logo-size) * -0.32);
+  inset-inline-end: calc(var(--logo-size) * -1.05);
+  width: calc(var(--logo-size) * 1.6);
+  height: calc(var(--logo-size) * 0.97);
+  overflow: visible;
+}

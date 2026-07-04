@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profit Boost — התמחור שמגיע לך</title>
+    <meta
+      name="description"
+      content="Profit Boost — שיטה פשוטה וברורה לתמחר את הטיפולים שלך בביטחון, בלי אשמה ובלי לחץ."
+    />
+    <!-- Hebrew-friendly typeface. Falls back gracefully to system fonts offline. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ==================================================================
+         TRACKING PIXELS  (paste the base snippets here, once each)
+         Event firing (InitiateCheckout / Lead) is handled in
+         src/lib/tracking.js and reads the IDs from src/config/integration.js.
+         ================================================================== -->
+
+    <!-- >>> PASTE META (FACEBOOK) PIXEL BASE CODE HERE <<< -->
+    <!--   (the <script>...fbq('init', 'YOUR_PIXEL_ID')...fbq('track','PageView')...</script> block) -->
+
+    <!-- >>> PASTE GOOGLE ANALYTICS (gtag.js) SNIPPET HERE <<< -->
+    <!--   (the two <script> tags Google gives you for G-XXXXXXXXXX) -->
+
+    <!-- >>> PASTE RAV MESSER TRACKING / REMARKETING PIXEL HERE <<< -->
+
+    <!-- >>> PASTE RAV MESSER SCRIPT-BASED FORM EMBED HERE (only if it is a
+             <script> embed, not an <iframe>). Leave a target <div> in the
+             LeadForm placeholder for it to render into. <<< -->
+
+    <!-- ==================================================================
+         PURCHASE EVENT (fires the real conversion) belongs on the THANK-YOU
+         page, AFTER payment succeeds — not on this page. If your thank-you
+         page is a Rav Messer page, add the Purchase pixel event there.
+         See README → "Thank you page".
+         ================================================================== -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

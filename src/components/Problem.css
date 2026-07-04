@@ -1,0 +1,66 @@
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.pain-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pain-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.pain-card__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex: none;
+}
+
+.pain-card__text {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Highlighted "main pain" card */
+.pain-card--main {
+  background: linear-gradient(150deg, #fff, var(--accent-soft));
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.pain-card--main .pain-card__text {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+@media (min-width: 720px) {
+  .pain-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .pain-card {
+    flex-direction: column;
+    padding: 26px;
+  }
+
+  /* Make the main pain span two columns for emphasis + rhythm. */
+  .pain-card--main {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+  }
+}

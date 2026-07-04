@@ -1,0 +1,135 @@
+.hero {
+  background: radial-gradient(
+      120% 90% at 100% 0%,
+      var(--accent-soft) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  padding-block: clamp(44px, 9vw, 96px);
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 8vw, 56px);
+  align-items: center;
+  text-align: center;
+}
+
+.hero__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  margin-bottom: 16px;
+}
+
+.hero__lead {
+  font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin-inline: auto;
+  margin-bottom: 26px;
+}
+
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero__secondary {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.hero__secondary:hover {
+  color: var(--ink);
+}
+
+/* Trust badges */
+.hero__badges {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero__badge {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__visual {
+  width: 100%;
+  position: relative;
+  /* room for the floating phone / Excel card so they never clip */
+  padding: 10px 14px 40px;
+}
+
+/* Soft contrast glow so the mockup doesn't blend into the beige. */
+.hero__visual::before {
+  content: '';
+  position: absolute;
+  inset: 6% 4% 10%;
+  background: radial-gradient(
+    70% 70% at 50% 40%,
+    rgba(192, 106, 77, 0.16),
+    rgba(125, 148, 128, 0.1) 55%,
+    transparent 72%
+  );
+  filter: blur(6px);
+  z-index: -1;
+}
+
+@media (min-width: 860px) {
+  .hero__inner {
+    flex-direction: row;
+    text-align: start;
+    justify-content: space-between;
+  }
+
+  .hero__copy {
+    flex: 1 1 52%;
+    max-width: 560px;
+  }
+
+  .hero__logo {
+    justify-content: flex-start;
+  }
+
+  .hero__lead {
+    margin-inline: 0;
+  }
+
+  .hero__cta {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .hero__badges {
+    justify-content: flex-start;
+  }
+
+  .hero__visual {
+    flex: 1 1 50%;
+    max-width: 560px;
+  }
+}

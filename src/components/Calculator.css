@@ -1,0 +1,235 @@
+.calc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(24px, 5vw, 44px);
+  margin-top: 30px;
+}
+
+.calc__inputs {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr; /* single column on mobile */
+  align-items: end; /* keep all input boxes on the same line */
+}
+
+.calc__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0; /* allow the grid cell to shrink below the input's intrinsic size */
+}
+
+.calc__label {
+  font-weight: 700;
+  font-size: 1rem;
+  /* reserve room for up to two lines so labels don't push fields out of line */
+  min-height: 2.6em;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Bordered box is the wrapper; input sits transparent inside so the ₪ unit
+   is a separate flex item and never overlaps the typed value. */
+.calc__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0; /* prevent the number input's intrinsic width from overflowing */
+  min-height: 52px; /* >= 44px touch target */
+  padding: 0 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.calc__input-wrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.calc__input-wrap input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+}
+
+.calc__input-wrap input:focus {
+  outline: none;
+}
+
+.calc__unit {
+  flex: none;
+  color: var(--ink-soft);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Hide number-input spinners for a cleaner look. */
+.calc__input-wrap input::-webkit-outer-spin-button,
+.calc__input-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.calc__input-wrap input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.calc__increase {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calc__chips {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calc__chip {
+  min-height: 48px; /* touch target */
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.calc__chip:hover {
+  border-color: var(--accent);
+}
+
+.calc__chip.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-ink);
+}
+
+.calc__chip:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- Result ---- */
+.calc__result {
+  margin-top: 28px;
+  padding: clamp(24px, 5vw, 36px);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--accent-soft), var(--bg-alt));
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.calc__cta {
+  margin-top: 26px;
+  text-align: center;
+}
+
+.calc__result-label {
+  display: block;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.calc__monthly {
+  display: block;
+  font-size: clamp(2.9rem, 14vw, 4.6rem); /* visually dominant */
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.calc__per {
+  font-size: 0.4em;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.calc__bar {
+  margin-top: 18px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(51, 48, 44, 0.08);
+  overflow: hidden;
+}
+
+.calc__bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  min-width: 6px;
+}
+
+.calc__result-secondary {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  color: var(--ink-soft);
+}
+
+.calc__yearly-label {
+  font-size: 1rem;
+}
+
+.calc__yearly {
+  font-size: 1.35rem; /* secondary to the monthly figure */
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.calc__result-support {
+  margin: 16px auto 0;
+  max-width: 46ch;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+}
+
+.calc__disclaimer {
+  margin: 18px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+@media (min-width: 620px) {
+  .calc__inputs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calc__bar-fill {
+    transition: none;
+  }
+}
