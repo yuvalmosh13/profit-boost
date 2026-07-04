@@ -1,100 +1,84 @@
 .about-yuval {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0) 0%,
+    transparent 0%,
     var(--accent-soft) 100%
   );
-  padding-block: clamp(50px, 8vw, 90px);
+  padding-block: clamp(60px, 8vw, 100px);
 }
 
 .about-yuval__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(28px, 6vw, 48px);
-  align-items: start;
+  gap: clamp(32px, 6vw, 56px);
+  align-items: center;
 }
 
-/* ---- Text side ---- */
-.about-yuval__text {
-  max-width: 58ch;
-  line-height: 1.75;
+/* ---- Image / Visual side ---- */
+.about-yuval__visual {
+  order: -1; /* Image first on mobile */
 }
 
-.about-yuval__text p {
-  margin: 16px 0;
-  font-size: 1.08rem;
-  color: var(--ink);
-}
-
-.about-yuval__intro {
-  font-weight: 700;
-  font-size: 1.18rem !important;
-  margin-bottom: 24px !important;
-}
-
-.about-yuval__highlight {
-  font-weight: 600;
-  background: linear-gradient(
-    90deg,
-    var(--primary) 0%,
-    var(--accent) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-inline: 12px;
-}
-
-.about-yuval__signature {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-top: 32px;
-  color: var(--primary);
-}
-
-/* ---- Credentials side ---- */
-.about-yuval__credentials {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.about-yuval__photo {
+.about-yuval__portrait {
   width: 100%;
-  max-width: 240px;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
   margin: 0 auto;
-}
-
-.about-yuval__photo-placeholder {
-  width: 100%;
-  aspect-ratio: 1;
-  background: var(--surface);
-  border: 2px solid var(--line);
   border-radius: var(--radius-lg);
-  display: grid;
-  place-items: center;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: box-shadow 0.3s ease;
 }
 
-.about-yuval__photo-placeholder.loaded {
+.about-yuval__portrait.loaded {
   box-shadow: var(--shadow-lg);
 }
 
-.about-yuval__photo-img {
+.about-yuval__portrait-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
-.about-yuval__photo-placeholder svg {
+.about-yuval__placeholder {
   width: 100%;
   height: 100%;
-  display: block;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-alt) 100%);
+  padding: 32px;
+  text-align: center;
+}
+
+.about-yuval__placeholder-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-yuval__placeholder-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.about-yuval__placeholder-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: 0.5px;
+}
+
+.about-yuval__placeholder-logo {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 @keyframes fadeIn {
@@ -106,58 +90,112 @@
   }
 }
 
-.about-yuval__creds-list {
+/* ---- Text side ---- */
+.about-yuval__text {
+  max-width: 55ch;
+}
+
+.about-yuval__headline {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.about-yuval__intro {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.about-yuval__body {
+  font-size: 1.02rem;
+  margin-bottom: 24px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* ---- Trust list ---- */
+.about-yuval__trust-list {
   list-style: none;
-  margin: 0;
+  margin: 28px 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-.about-yuval__cred-item {
+.about-yuval__trust-item {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 1.05rem;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--ink);
 }
 
-.about-yuval__cred-icon {
+.about-yuval__trust-check {
   flex: none;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   display: grid;
   place-items: center;
   background: var(--accent);
   color: #fff;
   border-radius: 50%;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 800;
+}
+
+/* ---- Quote ---- */
+.about-yuval__quote {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 28px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- CTA ---- */
+.about-yuval__cta {
+  margin-top: 28px;
+  width: 100%;
 }
 
 /* ---- Desktop layout ---- */
 @media (min-width: 720px) {
   .about-yuval__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.1fr;
     gap: clamp(48px, 8vw, 80px);
+    align-items: start;
+  }
+
+  .about-yuval__visual {
+    order: 1; /* Image on left, text on right */
+  }
+
+  .about-yuval__portrait {
+    max-width: 280px;
   }
 
   .about-yuval__text {
     order: 2;
   }
 
-  .about-yuval__credentials {
-    order: 1;
-    align-items: center;
+  .about-yuval__headline {
+    font-size: 2.2rem;
   }
 
-  .about-yuval__photo {
-    max-width: 280px;
-  }
-
-  .about-yuval__text p {
-    font-size: 1.1rem;
+  .about-yuval__cta {
+    width: auto;
+    margin-top: 32px;
   }
 }

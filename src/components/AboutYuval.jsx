@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import Reveal from './Reveal'
+import CTAButton from './CTAButton'
 import './AboutYuval.css'
 
-const credentials = [
-  'מניקוריסטית ומדריכה מהשטח',
-  'בעלת מותג ומוצרי ציפורניים',
-  'בעלת רקע אקדמי במנהל עסקים וראיית חשבון',
-  'מלווה נשים בתחום היופי בניהול, תמחור והתפתחות עסקית',
+const trustPoints = [
+  'מניקוריסטית ומדריכה בתחום הציפורניים',
+  'מלווה בעלות עסקים בתחום היופי',
+  'יצרה כלים פרקטיים לניהול ותמחור בעסק',
 ]
 
 export default function AboutYuval() {
@@ -17,66 +17,74 @@ export default function AboutYuval() {
     <section className="section about-yuval">
       <div className="container">
         <Reveal>
-          <span className="eyebrow">מי עומדת מאחורי Profit Boost?</span>
+          <span className="eyebrow">מי עומדת מאחורי הקורס?</span>
         </Reveal>
 
         <div className="about-yuval__grid">
-          {/* Text side */}
-          <Reveal className="about-yuval__text">
-            <p className="about-yuval__intro">
-              אני יובל מוש, מניקוריסטית, מדריכה ובעלת עסק בתחום הציפורניים.
-            </p>
-
-            <p>
-              לצד הניסיון שלי מהשטח, למדתי תואר במנהל עסקים וראיית חשבון — והחיבור בין עולם היופי לעולם המספרים הוא בדיוק מה שהוביל אותי ליצור את Profit Boost.
-            </p>
-
-            <p>
-              אחרי שנים שבהן ליוויתי נשים בתחום, מכרתי מוצרים, יצרתי הדרכות ודיברתי עם בעלות עסקים מהשטח — ראיתי שוב ושוב את אותה בעיה:
-            </p>
-
-            <p className="about-yuval__highlight">
-              נשים מוכשרות, עם לקוחות, עבודה ויומן מלא — אבל בלי מספיק סדר בכסף של העסק.
-            </p>
-
-            <p>
-              Profit Boost נולד כדי להפוך את הנושא הזה לפשוט, ברור ולא מאיים. לא קורס פיננסי כבד, אלא תוכנית קצרה ופרקטית שתעזור לך להבין את המספרים, לתמחר נכון, להעלות מחירים בביטחון ולקבל החלטות עסקיות חכמות יותר.
-            </p>
-
-            <div className="about-yuval__signature">— יובל מוש</div>
+          {/* Image / visual side */}
+          <Reveal className="about-yuval__visual">
+            <div className={`about-yuval__portrait ${imageLoaded ? 'loaded' : ''}`}>
+              {!imageFailed && (
+                <img
+                  src="/yuval.jpg"
+                  alt="יובל מוש"
+                  className="about-yuval__portrait-img"
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageFailed(true)}
+                />
+              )}
+              {imageFailed && (
+                <div className="about-yuval__placeholder">
+                  <div className="about-yuval__placeholder-content">
+                    <div className="about-yuval__placeholder-name">Yuval Mosh</div>
+                    <div className="about-yuval__placeholder-title">מניקוריסטית · מדריכה · בעלת עסק</div>
+                    <div className="about-yuval__placeholder-logo">Profit Boost</div>
+                  </div>
+                </div>
+              )}
+            </div>
           </Reveal>
 
-          {/* Credentials side */}
-          <Reveal className="about-yuval__credentials">
-            <div className="about-yuval__photo">
-              <div className={`about-yuval__photo-placeholder ${imageLoaded ? 'loaded' : ''}`}>
-                {!imageFailed && (
-                  <img
-                    src="/yuval.jpg"
-                    alt="יובל מוש"
-                    className="about-yuval__photo-img"
-                    onLoad={() => setImageLoaded(true)}
-                    onError={() => setImageFailed(true)}
-                  />
-                )}
-                {imageFailed && (
-                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="100" cy="100" r="100" fill="var(--accent-soft)" />
-                    <circle cx="100" cy="70" r="30" fill="var(--primary)" opacity="0.2" />
-                    <ellipse cx="100" cy="140" rx="45" ry="50" fill="var(--primary)" opacity="0.15" />
-                  </svg>
-                )}
-              </div>
-            </div>
+          {/* Text side */}
+          <Reveal className="about-yuval__text">
+            <h2 className="about-yuval__headline">נעים מאוד, אני יובל</h2>
 
-            <ul className="about-yuval__creds-list">
-              {credentials.map((cred, i) => (
-                <li key={i} className="about-yuval__cred-item">
-                  <span className="about-yuval__cred-icon">✓</span>
-                  <span>{cred}</span>
+            <p className="about-yuval__intro">
+              אני יובל מוש, מניקוריסטית, מדריכה ובעלת עסק שחיה את התחום הזה ביום־יום.
+            </p>
+
+            <p className="about-yuval__body">
+              אני יודעת כמה קל להיות עסוקה, לקבל לקוחות, לקנות חומרים, להעלות סטוריז, לעבוד בלי הפסקה — ועדיין לא באמת להבין כמה כסף נשאר בסוף.
+            </p>
+
+            <p className="about-yuval__body">
+              בדיוק בגלל זה יצרתי את Profit Boost.
+            </p>
+
+            <p className="about-yuval__body">
+              רציתי לקחת נושא שמרגיש להרבה בעלות עסקים מסובך, מלחיץ ולא נעים — ולהפוך אותו למשהו פשוט, ברור ופרקטי.
+            </p>
+
+            <p className="about-yuval__body">
+              המטרה שלי היא לא שתהיי רואת חשבון. המטרה שלי היא שתביני את העסק שלך טוב יותר, תדעי לתמחר נכון יותר, ותדברי על כסף מול לקוחות עם הרבה יותר ביטחון.
+            </p>
+
+            <ul className="about-yuval__trust-list">
+              {trustPoints.map((point, i) => (
+                <li key={i} className="about-yuval__trust-item">
+                  <span className="about-yuval__trust-check">✓</span>
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
+
+            <blockquote className="about-yuval__quote">
+              "המטרה שלי היא שתפסיקי לנחש — ותתחילי להבין מה באמת קורה בכסף של העסק שלך."
+            </blockquote>
+
+            <CTAButton className="about-yuval__cta">
+              אני רוצה לעשות סדר בכסף של העסק שלי
+            </CTAButton>
           </Reveal>
         </div>
       </div>

@@ -26,9 +26,9 @@ export default function App() {
         <Problem />
         <Reframe />
         <Curriculum />
+        <AboutYuval />
         <Calculator />
         <HowItWorks />
-        <AboutYuval />
         <Testimonials />
         <Offer />
         {showLeadForm && <LeadForm />}
