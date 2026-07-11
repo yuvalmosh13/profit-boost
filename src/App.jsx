@@ -34,7 +34,7 @@ export default function App() {
         <Reframe />
         <Curriculum />
 
-        {/* About Yuval Section */}
+        {/* Who Am I — Yuval's Introduction */}
         <section id="about-yuval" className="section about-yuval">
           <div className="container">
             <div className="about-yuval__grid">
