@@ -2,13 +2,19 @@
  *  Centralized CTA behavior. EVERY button on the page routes through
  *  here, so a single config change updates all of them at once.
  *
- *  - 'checkout' mode → navigate to RAV_MESSER_URL (Rav Messer checkout).
+ *  - 'checkout' mode → open email modal, then navigate to RAV_MESSER_URL.
  *  - 'lead' mode     → scroll to the embedded Rav Messer form (#lead-form).
  *  - While a link is still a "PASTE_..." placeholder, the button stays
  *    useful by scrolling to a REAL section (#offer) instead of breaking.
  * ===================================================================== */
 import { CONVERSION_MODE, RAV_MESSER_URL, isPlaceholder } from '../config/integration'
 import { trackPurchaseIntent, trackLead } from './tracking'
+
+let emailModalOpenFn = null
+
+export function setEmailModalOpenFn(fn) {
+  emailModalOpenFn = fn
+}
 
 function scrollToId(id) {
   if (typeof document === 'undefined') return
@@ -33,18 +39,19 @@ export function getCtaProps() {
     }
   }
 
-  // ---- Checkout flow ----
+  // ---- Checkout flow → open email modal first ----
   const checkoutReady = !isPlaceholder(RAV_MESSER_URL)
   return {
-    href: checkoutReady ? RAV_MESSER_URL : '#offer',
+    href: '#',
     onClick: (e) => {
+      e.preventDefault()
       trackPurchaseIntent()
-      if (!checkoutReady) {
+      if (checkoutReady && emailModalOpenFn) {
+        emailModalOpenFn()
+      } else {
         // Link not pasted yet → keep the button working: go to the offer.
-        e.preventDefault()
         scrollToId('offer')
       }
-      // When checkoutReady, let the anchor navigate to RAV_MESSER_URL normally.
     },
   }
 }

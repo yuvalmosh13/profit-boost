@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
 import Reframe from './components/Reframe'
@@ -11,10 +12,18 @@ import FAQ from './components/FAQ'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import StickyCTA from './components/StickyCTA'
-import { CONVERSION_MODE, hasLeadEmbed, RAV_MESSER_URL } from './config/integration'
+import EmailModal from './components/EmailModal'
+import CTAButton from './components/CTAButton'
+import { CONVERSION_MODE, hasLeadEmbed } from './config/integration'
+import { setEmailModalOpenFn } from './lib/cta'
 
 export default function App() {
+  const [emailModalOpen, setEmailModalOpen] = useState(false)
   const showLeadForm = CONVERSION_MODE === 'lead' || hasLeadEmbed
+
+  useEffect(() => {
+    setEmailModalOpenFn(() => setEmailModalOpen(true))
+  }, [])
 
   return (
     <>
@@ -70,9 +79,9 @@ export default function App() {
                   "המטרה שלי היא שתפסיקי לנחש — ותתחילי להבין מה באמת קורה בכסף של העסק שלך."
                 </blockquote>
 
-                <a href={RAV_MESSER_URL} className="btn btn--primary about-yuval-cta">
+                <CTAButton className="about-yuval-cta">
                   אני רוצה לעשות סדר בכסף של העסק שלי
-                </a>
+                </CTAButton>
               </div>
             </div>
           </div>
@@ -88,6 +97,7 @@ export default function App() {
       </main>
       <Footer />
       <StickyCTA />
+      <EmailModal isOpen={emailModalOpen} onClose={() => setEmailModalOpen(false)} />
     </>
   )
 }

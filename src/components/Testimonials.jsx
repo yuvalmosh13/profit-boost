@@ -14,12 +14,11 @@ export default function Testimonials() {
     <section className="section section--alt" aria-labelledby="proof-title">
       <div className="container">
         <Reveal className="text-center">
-          <span className="eyebrow">המלצות אמיתיות מתלמידות ובעלות עסקים</span>
           <h2 id="proof-title" className="section-title">
             מה בעלות עסקים אומרות אחרי שהן עושות סדר במספרים
           </h2>
           <p className="section-lead center-block">
-            הודעות אמיתיות שקיבלנו — פרטים מזהים הוסרו מטעמי פרטיות.
+            הודעות אמיתיות מתלמידות ובעלות עסקים שהתחילו להבין טוב יותר את הכסף, התמחור וההתנהלות של העסק שלהן.
           </p>
         </Reveal>
 

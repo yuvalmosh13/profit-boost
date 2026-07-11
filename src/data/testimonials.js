@@ -18,14 +18,14 @@ export const reviews = [
   {
     platform: 'whatsapp',
     time: '22:00',
-    text: 'אמלה, זה פצצה ומשוגע רצחחח',
+    text: 'מושלם מושלם!!! אין נוח כזה. לא יודעת איך לא עשיתי את זה עד היום.',
   },
   {
     platform: 'whatsapp',
     time: '18:12',
-    text: 'מושלם מושלם!!! אין נוח כזה, לא יודעת איך לא עשיתי את זה עד היום',
+    text: 'אמלה, זה פצצה. מושקע רצח ומשוגעת.',
   },
 ]
 
 // Slim highlight chips (short quotes that don't duplicate the cards above).
-export const chips = ['את מלכה', 'זה ניהול עסק נכון', 'שווה לכוון']
+export const chips = ['זה ניהול עסק נכון', 'שווה לכוון', 'גישה מיידית']
