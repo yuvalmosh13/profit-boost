@@ -16,6 +16,7 @@ import EmailModal from './components/EmailModal'
 import CTAButton from './components/CTAButton'
 import { CONVERSION_MODE, hasLeadEmbed } from './config/integration'
 import { setEmailModalOpenFn } from './lib/cta'
+import './components/AboutYuval.css'
 
 export default function App() {
   const [emailModalOpen, setEmailModalOpen] = useState(false)
