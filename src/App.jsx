@@ -34,21 +34,21 @@ export default function App() {
         <Curriculum />
 
         {/* About Yuval Section */}
-        <section id="about-yuval" className="section about-yuval-inline">
+        <section id="about-yuval" className="section about-yuval">
           <div className="container">
-            <div className="about-yuval-grid">
-              <div className="about-yuval-visual">
-                <div className="about-yuval-badge">מי עומדת מאחורי הקורס?</div>
-                <div className="about-yuval-portrait">
-                  <div className="about-yuval-name">Yuval Mosh</div>
-                  <div className="about-yuval-role">מניקוריסטית · מדריכה · בעלת עסק</div>
-                  <div className="about-yuval-logo">Profit Boost</div>
+            <div className="about-yuval__grid">
+              <div className="about-yuval__visual">
+                <div className="about-yuval__badge">מי עומדת מאחורי הקורס?</div>
+                <div className="about-yuval__portrait">
+                  <div className="about-yuval__name">Yuval Mosh</div>
+                  <div className="about-yuval__role">מניקוריסטית · מדריכה · בעלת עסק</div>
+                  <div className="about-yuval__logo">Profit Boost</div>
                 </div>
               </div>
 
-              <div className="about-yuval-content">
+              <div className="about-yuval__content">
                 <span className="eyebrow">מי אני?</span>
-                <h2 className="about-yuval-headline">נעים מאוד, אני יובל</h2>
+                <h2 className="about-yuval__headline">נעים מאוד, אני יובל</h2>
 
                 <p>
                   אני יובל מוש, מניקוריסטית, מדריכה ובעלת עסק שחיה את התחום הזה ביום־יום.
@@ -69,17 +69,17 @@ export default function App() {
                   יותר, תדעי לתמחר נכון יותר, ותדברי על כסף מול לקוחות עם הרבה יותר ביטחון.
                 </p>
 
-                <ul className="about-yuval-bullets">
+                <ul className="about-yuval__bullets">
                   <li>מניקוריסטית ומדריכה בתחום הציפורניים</li>
                   <li>מלווה בעלות עסקים בתחום היופי</li>
                   <li>יוצרת כלים פרקטיים לניהול ותמחור בעסק</li>
                 </ul>
 
-                <blockquote className="about-yuval-quote">
+                <blockquote className="about-yuval__quote">
                   "המטרה שלי היא שתפסיקי לנחש — ותתחילי להבין מה באמת קורה בכסף של העסק שלך."
                 </blockquote>
 
-                <CTAButton className="about-yuval-cta">
+                <CTAButton className="about-yuval__cta">
                   אני רוצה לעשות סדר בכסף של העסק שלי
                 </CTAButton>
               </div>
