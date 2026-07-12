@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { RAV_MESSER_URL } from '../config/integration'
+import { buildCheckoutUrl } from '../lib/checkout'
 import './EmailModal.css'
 
 export default function EmailModal({ isOpen, onClose }) {
@@ -36,13 +36,17 @@ export default function EmailModal({ isOpen, onClose }) {
       return
     }
 
-    // Save to localStorage
+    // Save the email locally so it survives the redirect (and can be reused).
     localStorage.setItem('profitBoostCustomerEmail', trimmedEmail)
 
-    // Navigate to checkout
+    // Forward to the Rav Messer / Cardcom payment page, carrying the email as a
+    // URL parameter when the checkout supports it (passEmailToCheckout).
+    //
+    // NOTE: we only PASS the email to checkout here. Actual subscription to Rav
+    // Messer should happen only after successful payment through Rav Messer
+    // checkout / payment automation / Make webhook — never from the frontend.
     setIsSubmitting(true)
-    const checkoutUrl = RAV_MESSER_URL + (RAV_MESSER_URL.includes('?') ? '&' : '?') + `email=${encodeURIComponent(trimmedEmail)}`
-    window.location.href = checkoutUrl
+    window.location.href = buildCheckoutUrl(trimmedEmail)
   }
 
   const handleBackdropClick = (e) => {

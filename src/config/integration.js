@@ -30,6 +30,16 @@ export const CONVERSION_MODE = 'checkout' // 'checkout' | 'lead'
 export const RAV_MESSER_URL =
   'https://secure.cardcom.solutions/EA/EA5/EbjOxqDDkmWShpZHPpPyQ/PaymentSP'
 
+// CHECKOUT_URL is the canonical name used across the code for the payment page.
+// It points to RAV_MESSER_URL above — paste your Rav Messer checkout link there.
+export const CHECKOUT_URL = RAV_MESSER_URL
+
+// When true, the email the visitor types in the modal is appended to the
+// checkout URL as ?email=... (or &email=...) so the Rav Messer / Cardcom
+// payment page can pre-fill / receive it. If the payment page does NOT support
+// this, set to false — the link still works, it just won't carry the email.
+export const passEmailToCheckout = true
+
 // >>> PASTE RAV MESSER FORM URL HERE <<<
 // (Direct URL to the form — used as a fallback in 'lead' mode.)
 export const LEAD_FORM_URL = 'PASTE_RAV_MESSER_FORM_URL_HERE'
