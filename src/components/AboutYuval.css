@@ -37,8 +37,8 @@
 
 .about-yuval__portrait {
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 3 / 4;
+  max-width: 380px;
+  aspect-ratio: 1 / 1; /* matches the square photo → no cropping, fully centered */
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -50,7 +50,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center; /* keep her centered in the frame */
   display: block;
 }
 
@@ -145,7 +145,7 @@
   }
 
   .about-yuval__portrait {
-    max-width: 320px;
+    max-width: 360px;
   }
 
   .about-yuval__cta {
