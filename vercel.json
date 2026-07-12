@@ -2,6 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/ads-dashboard", "destination": "/index.html" }
+    { "source": "/ads-dashboard", "destination": "/index.html" },
+    { "source": "/creative-kit", "destination": "/index.html" }
   ]
 }

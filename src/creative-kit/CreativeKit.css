@@ -1,0 +1,205 @@
+/* =========================================================================
+   Creative Kit — internal working document. Clean, professional, RTL.
+   Reuses Profit Boost design tokens + a gold accent. Not a sales page.
+   ========================================================================= */
+
+.ck {
+  --gold: #c9a24e;
+  --gold-soft: #f6edd8;
+  --cold: #4f6d7d;
+  --cold-soft: #e7eef2;
+  --rt: #8a5a86;
+  --rt-soft: #f1e8f0;
+
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  padding: 28px 20px 80px;
+  line-height: 1.6;
+}
+
+.ck-container { max-width: 1080px; margin-inline: auto; }
+
+/* ---- Header ---- */
+.ck-header {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+.ck-header__title { margin: 0 0 6px; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; }
+.ck-header__subtitle { margin: 0 0 12px; color: var(--ink-soft); font-size: 1.05rem; }
+.ck-header__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8a6d24;
+  background: var(--gold-soft);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+/* ---- Sections ---- */
+.ck-section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+.ck-section__title { margin: 0 0 6px; font-size: 1.3rem; font-weight: 800; }
+.ck-section__lead { margin: 0 0 16px; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---- Tags ---- */
+.ck-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.ck-tag--cold { background: var(--cold-soft); color: var(--cold); }
+.ck-tag--retargeting { background: var(--rt-soft); color: var(--rt); }
+.ck-tag--both { background: var(--accent-soft); color: var(--accent); }
+.ck-tag--prio { background: var(--gold-soft); color: #8a6d24; }
+
+/* ---- Overview table ---- */
+.ck-table-wrap { overflow-x: auto; }
+.ck-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 820px; }
+.ck-table th,
+.ck-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: right; vertical-align: top; }
+.ck-table thead th { background: var(--bg-alt); font-weight: 700; white-space: nowrap; }
+.ck-table__name { font-weight: 800; white-space: nowrap; }
+
+/* ---- Copy button ---- */
+.ck-copy {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.ck-copy:hover { border-color: var(--gold); color: var(--ink); }
+.ck-copy.is-done { background: var(--gold-soft); border-color: var(--gold); color: #8a6d24; }
+
+/* ---- Video creative cards ---- */
+.ck-video-list { display: flex; flex-direction: column; gap: 12px; }
+.ck-video {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  overflow: hidden;
+}
+.ck-video.is-open { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+.ck-video__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  text-align: right;
+}
+.ck-video__name { font-size: 1.05rem; font-weight: 800; color: var(--ink); }
+.ck-video__meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ck-video__chevron {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--gold);
+  width: 24px;
+  text-align: center;
+}
+.ck-video__hook-preview { margin: 0; padding: 0 18px 14px; color: var(--ink-soft); font-style: italic; font-size: 0.9rem; }
+.ck-video__body { padding: 4px 18px 20px; display: flex; flex-direction: column; gap: 14px; border-top: 1px dashed var(--line); margin-top: 4px; }
+
+/* ---- Copyable field ---- */
+.ck-field { display: flex; flex-direction: column; gap: 5px; }
+.ck-field__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.ck-field__label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.03em; color: var(--gold); text-transform: uppercase; }
+.ck-field__text { margin: 0; font-size: 0.95rem; color: var(--ink); }
+.ck-field__text--multi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px; line-height: 1.7; }
+
+/* ---- Storyboard ---- */
+.ck-storyboard { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.ck-storyboard li { display: flex; gap: 10px; align-items: baseline; font-size: 0.9rem; }
+.ck-storyboard__time {
+  flex: none;
+  min-width: 58px;
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+.ck-storyboard__see { color: var(--ink); }
+
+/* ---- Assets list ---- */
+.ck-assets { margin: 0; padding-inline-start: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+
+/* ---- Static ads ---- */
+.ck-static-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.ck-static {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ck-static__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.ck-static__title { margin: 0; font-size: 1.15rem; font-weight: 800; line-height: 1.3; }
+.ck-static__subtitle { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+.ck-static__row { display: flex; flex-direction: column; gap: 3px; }
+.ck-static__row p { margin: 0; font-size: 0.88rem; }
+.ck-static__label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--gold); }
+.ck-static__foot { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+
+/* ---- Priority ---- */
+.ck-priority { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ck-priority li { display: flex; align-items: center; gap: 12px; font-size: 1rem; font-weight: 600; }
+.ck-priority__num {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+/* ---- Audience split ---- */
+.ck-audience { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ck-audience__col { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; background: var(--bg); }
+.ck-audience__title { margin: 0 0 10px; font-size: 1.05rem; font-weight: 800; }
+.ck-audience__title--cold { color: var(--cold); }
+.ck-audience__title--rt { color: var(--rt); }
+.ck-audience__col ul { margin: 0; padding-inline-start: 20px; display: flex; flex-direction: column; gap: 6px; }
+.ck-audience__col li { font-size: 0.95rem; }
+
+/* ---- Responsive ---- */
+@media (max-width: 760px) {
+  .ck { padding: 18px 12px 60px; }
+  .ck-static-grid { grid-template-columns: 1fr; }
+  .ck-audience { grid-template-columns: 1fr; }
+  .ck-video__header { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
