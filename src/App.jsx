@@ -41,9 +41,12 @@ export default function App() {
               <div className="about-yuval__visual">
                 <div className="about-yuval__badge">מי עומדת מאחורי הקורס?</div>
                 <div className="about-yuval__portrait">
-                  <div className="about-yuval__name">Yuval Mosh</div>
-                  <div className="about-yuval__role">מניקוריסטית · מדריכה · בעלת עסק</div>
-                  <div className="about-yuval__logo">Profit Boost</div>
+                  <img
+                    src="/yuval.jpg"
+                    alt="יובל מוש — מניקוריסטית, מדריכה ובעלת עסק"
+                    className="about-yuval__portrait-img"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 

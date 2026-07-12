@@ -7,7 +7,7 @@
  *  - While a link is still a "PASTE_..." placeholder, the button stays
  *    useful by scrolling to a REAL section (#offer) instead of breaking.
  * ===================================================================== */
-import { CONVERSION_MODE, RAV_MESSER_URL, isPlaceholder } from '../config/integration'
+import { CONVERSION_MODE, RAV_MESSER_URL, MAIN_SITE_URL, isPlaceholder } from '../config/integration'
 import { trackPurchaseIntent, trackLead } from './tracking'
 
 let emailModalOpenFn = null
@@ -42,14 +42,18 @@ export function getCtaProps() {
   // ---- Checkout flow → open email modal first ----
   const checkoutReady = !isPlaceholder(RAV_MESSER_URL)
   return {
-    href: '#',
+    // Real destination as href (no "#"): right-click / open-in-new-tab still
+    // works, and a normal click is intercepted to open the email modal first.
+    href: checkoutReady ? RAV_MESSER_URL : MAIN_SITE_URL,
     onClick: (e) => {
       e.preventDefault()
       trackPurchaseIntent()
       if (checkoutReady && emailModalOpenFn) {
         emailModalOpenFn()
+      } else if (emailModalOpenFn) {
+        emailModalOpenFn()
       } else {
-        // Link not pasted yet → keep the button working: go to the offer.
+        // Extreme fallback only: keep the button useful.
         scrollToId('offer')
       }
     },

@@ -1,142 +1,101 @@
+/* =========================================================================
+   "מי אני?" — About Yuval section
+   Matches the markup rendered inline in src/App.jsx.
+   Mobile: image on top, text below. Desktop: text right, image left (RTL).
+   ========================================================================= */
+
 .about-yuval {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--accent-soft) 100%
-  );
-  padding-block: clamp(60px, 8vw, 100px);
+  background: linear-gradient(180deg, transparent 0%, var(--accent-soft) 100%);
 }
 
 .about-yuval__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(32px, 6vw, 56px);
+  gap: clamp(28px, 6vw, 52px);
   align-items: center;
 }
 
-/* ---- Image / Visual side ---- */
+/* ---- Visual / image side ---- */
 .about-yuval__visual {
-  order: -1; /* Image first on mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-yuval__badge {
+  display: inline-block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
 }
 
 .about-yuval__portrait {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   aspect-ratio: 3 / 4;
-  margin: 0 auto;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   background: var(--surface);
   border: 1px solid var(--line);
-  transition: box-shadow 0.3s ease;
-}
-
-.about-yuval__portrait.loaded {
-  box-shadow: var(--shadow-lg);
 }
 
 .about-yuval__portrait-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   display: block;
-  animation: fadeIn 0.5s ease-out;
 }
 
-.about-yuval__placeholder {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-alt) 100%);
-  padding: 32px;
-  text-align: center;
-}
-
-.about-yuval__placeholder-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.about-yuval__placeholder-name {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--primary);
-}
-
-.about-yuval__placeholder-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink-soft);
-  letter-spacing: 0.5px;
-}
-
-.about-yuval__placeholder-logo {
-  margin-top: 12px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* ---- Text side ---- */
-.about-yuval__text {
-  max-width: 55ch;
+/* ---- Text / content side ---- */
+.about-yuval__content {
+  max-width: 58ch;
 }
 
 .about-yuval__headline {
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   font-weight: 800;
+  margin: 8px 0 20px;
+}
+
+.about-yuval__content p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
   margin-bottom: 16px;
 }
 
-.about-yuval__intro {
-  font-size: 1.08rem;
-  font-weight: 600;
-  margin-bottom: 18px;
-  line-height: 1.7;
-  color: var(--ink);
-}
-
-.about-yuval__body {
-  font-size: 1.02rem;
-  margin-bottom: 24px;
-  line-height: 1.75;
-  color: var(--ink-soft);
-}
-
-/* ---- Trust list ---- */
-.about-yuval__trust-list {
+/* ---- Bullets ---- */
+.about-yuval__bullets {
   list-style: none;
-  margin: 28px 0;
+  margin: 26px 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.about-yuval__trust-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.about-yuval__bullets li {
+  position: relative;
+  padding-inline-start: 30px;
   font-size: 0.98rem;
   font-weight: 600;
   color: var(--ink);
+  line-height: 1.5;
 }
 
-.about-yuval__trust-check {
-  flex: none;
+.about-yuval__bullets li::before {
+  content: '✓';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1px;
   width: 22px;
   height: 22px;
   display: grid;
@@ -144,7 +103,7 @@
   background: var(--accent);
   color: #fff;
   border-radius: 50%;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
 }
 
@@ -153,49 +112,44 @@
   background: var(--surface);
   border: 1.5px solid var(--line);
   border-radius: var(--radius);
-  padding: 20px;
-  margin: 28px 0;
+  padding: 20px 22px;
+  margin: 26px 0;
   font-size: 1rem;
   font-weight: 600;
   color: var(--ink);
   line-height: 1.6;
-  text-align: center;
   font-style: italic;
   box-shadow: var(--shadow-sm);
 }
 
 /* ---- CTA ---- */
 .about-yuval__cta {
-  margin-top: 28px;
+  margin-top: 26px;
   width: 100%;
 }
 
-/* ---- Desktop layout ---- */
-@media (min-width: 720px) {
+/* ---- Desktop: text right, image left ---- */
+@media (min-width: 760px) {
   .about-yuval__grid {
-    grid-template-columns: 1fr 1.1fr;
-    gap: clamp(48px, 8vw, 80px);
-    align-items: start;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(40px, 7vw, 72px);
+    align-items: center;
+  }
+
+  .about-yuval__content {
+    order: 1; /* right side in RTL */
   }
 
   .about-yuval__visual {
-    order: 1; /* Image on left, text on right */
+    order: 2; /* left side in RTL */
   }
 
   .about-yuval__portrait {
-    max-width: 280px;
-  }
-
-  .about-yuval__text {
-    order: 2;
-  }
-
-  .about-yuval__headline {
-    font-size: 2.2rem;
+    max-width: 320px;
   }
 
   .about-yuval__cta {
     width: auto;
-    margin-top: 32px;
+    margin-top: 30px;
   }
 }
