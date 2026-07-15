@@ -1,6 +1,7 @@
 import CTAButton from './CTAButton'
 import HeroMockup from './HeroMockup'
 import Logo from './Logo'
+import { PRICE_LAUNCH, PRICE_FULL, CURRENCY } from '../config/integration'
 import './Hero.css'
 
 // Trust badges — edit copy here.
@@ -29,6 +30,10 @@ export default function Hero() {
             <br />
             הגיע הזמן להבין כמה באמת נשאר.
           </h1>
+          <p className="hero__subhead">
+            תוכנית פרקטית וקצרה למניקוריסטיות ובעלות עסק בתחום היופי — לתמחר נכון,
+            להעלות מחירים בביטחון ולדעת בדיוק כמה נשאר בסוף החודש.
+          </p>
           <p className="hero__lead">
             Profit Boost היא תוכנית דיגיטלית קצרה ופרקטית שתעזור לך להבין את
             המספרים של העסק, לתמחר נכון, להעלות מחירים בביטחון, לדעת מה לגבות על
@@ -41,6 +46,11 @@ export default function Hero() {
               נסי קודם את המחשבון ↓
             </a>
           </div>
+
+          <p className="hero__price">
+            גישה מיידית לכל הקורס — {PRICE_LAUNCH} {CURRENCY} בלבד{' '}
+            <span className="hero__price-anchor">(במקום {PRICE_FULL} {CURRENCY})</span>
+          </p>
 
           <ul className="hero__badges">
             {badges.map((b) => (

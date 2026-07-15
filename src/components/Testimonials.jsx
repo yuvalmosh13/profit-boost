@@ -1,13 +1,11 @@
 import Reveal from './Reveal'
-import { reviews, chips } from '../data/testimonials'
+import { reviews } from '../data/testimonials'
 import './Testimonials.css'
-
-const platformLabel = { whatsapp: 'WhatsApp', instagram: 'Instagram' }
 
 /**
  * Social proof — built from REAL student messages (data/testimonials.js).
- * A clean grid of chat-style review cards + slim highlight chips + a
- * Before/After transformation. Authentic, no identifying details.
+ * Clean quote cards + a Before/After transformation. Authentic, no
+ * identifying details.
  */
 export default function Testimonials() {
   return (
@@ -22,27 +20,12 @@ export default function Testimonials() {
           </p>
         </Reveal>
 
-        {/* Slim highlight chips */}
-        <Reveal className="quote-strip">
-          {chips.map((q) => (
-            <span className="quote-chip" key={q}>
-              „{q}”
-            </span>
-          ))}
-        </Reveal>
-
         {/* Review cards */}
         <Reveal className="reviews">
           {reviews.map((r, i) => (
-            <figure className={`review review--${r.platform}`} key={i}>
-              <div className="review__head">
-                <span className="review__avatar" aria-hidden="true" />
-                <span className="review__platform">{platformLabel[r.platform]}</span>
-                <span className="review__badge" aria-hidden="true">✓</span>
-              </div>
+            <figure className="review" key={i}>
               <blockquote className="review__body">
                 <p className="review__text">{r.text}</p>
-                {r.time && <span className="review__time">{r.time}</span>}
               </blockquote>
             </figure>
           ))}

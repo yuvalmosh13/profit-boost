@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
+import FailedSolutions from './components/FailedSolutions'
 import Reframe from './components/Reframe'
 import Calculator from './components/Calculator'
 import Curriculum from './components/Curriculum'
@@ -31,6 +32,7 @@ export default function App() {
       <main>
         <Hero />
         <Problem />
+        <FailedSolutions />
         <Reframe />
         <Curriculum />
 

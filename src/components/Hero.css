@@ -27,12 +27,35 @@
   margin-bottom: 16px;
 }
 
+.hero__subhead {
+  font-size: clamp(1.1rem, 3.6vw, 1.3rem);
+  font-weight: 600;
+  color: var(--ink);
+  max-width: 56ch;
+  margin-inline: auto;
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+
 .hero__lead {
   font-size: clamp(1.05rem, 3.5vw, 1.25rem);
   color: var(--ink-soft);
   max-width: 54ch;
   margin-inline: auto;
   margin-bottom: 26px;
+}
+
+.hero__price {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hero__price-anchor {
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-decoration: line-through;
 }
 
 .hero__cta {
@@ -115,7 +138,8 @@
     justify-content: flex-start;
   }
 
-  .hero__lead {
+  .hero__lead,
+  .hero__subhead {
     margin-inline: 0;
   }
 

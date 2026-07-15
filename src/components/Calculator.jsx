@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Reveal from './Reveal'
 import CTAButton from './CTAButton'
 import useCountUp from '../hooks/useCountUp'
+import { PRICE_LAUNCH, CURRENCY } from '../config/integration'
 import './Calculator.css'
 
 // Soft reference used only to fill the confidence bar (decorative).
@@ -181,6 +182,9 @@ export default function Calculator() {
 
         <Reveal className="calc__cta">
           <CTAButton>אני רוצה להבין את המספרים של העסק שלי</CTAButton>
+          <p className="calc__price-line">
+            וכל זה נמצא בתוך Profit Boost — ב־{PRICE_LAUNCH} {CURRENCY} בלבד.
+          </p>
         </Reveal>
       </div>
     </section>

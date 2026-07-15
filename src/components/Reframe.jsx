@@ -31,6 +31,20 @@ export default function Reframe() {
           </p>
         </Reveal>
 
+        <Reveal className="mechanism">
+          <span className="mechanism__label">השיטה</span>
+          <p className="mechanism__text">
+            7 שיעורים קצרים + אקסל מוכן לניהול העסק. במקום רו״ח יקר או קורס
+            פיננסי ארוך — מסלול קצר ופרקטי שמתאים גם למי ששונאת מספרים, ואפשר
+            ליישם כבר השבוע.
+          </p>
+          <div className="mechanism__pills">
+            <span className="mechanism__pill">7 שיעורים קצרים</span>
+            <span className="mechanism__pill">אקסל מוכן</span>
+            <span className="mechanism__pill">יישום כבר השבוע</span>
+          </div>
+        </Reveal>
+
         <Reveal className="topics">
           {topics.map((t) => (
             <span className="topic-chip" key={t}>
