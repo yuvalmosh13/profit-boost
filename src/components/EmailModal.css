@@ -38,7 +38,7 @@
 .email-modal__close {
   position: absolute;
   top: 20px;
-  right: 20px;
+  left: 20px;
   background: none;
   border: none;
   font-size: 32px;
@@ -164,6 +164,6 @@
     height: 40px;
     font-size: 28px;
     top: 12px;
-    right: 12px;
+    left: 12px;
   }
 }
