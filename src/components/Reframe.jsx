@@ -1,18 +1,10 @@
 import Reveal from './Reveal'
 import './Reframe.css'
 
-// Key course topics — surfaced early so visitors see it's more than pricing.
-const topics = [
-  'איך להעלות מחיר — ובכמה',
-  'רעיונות להגדיל הכנסות (ואיך בפועל)',
-  'תמחור קישוטים והשלמות',
-  'עסק זעיר / עוסק פטור / עוסק מורשה',
-  'להבין כמה באמת נשאר',
-]
-
 /**
  * Reframe — "this is not just another theory course". Positions Profit Boost
- * as a broad, practical program and previews the real topics via chips.
+ * as a broad, practical program. The actual topic list lives in the Curriculum
+ * section below, so no topic chips are duplicated here.
  */
 export default function Reframe() {
   return (
@@ -43,14 +35,6 @@ export default function Reframe() {
             <span className="mechanism__pill">אקסל מוכן</span>
             <span className="mechanism__pill">יישום כבר השבוע</span>
           </div>
-        </Reveal>
-
-        <Reveal className="topics">
-          {topics.map((t) => (
-            <span className="topic-chip" key={t}>
-              {t}
-            </span>
-          ))}
         </Reveal>
       </div>
     </section>
