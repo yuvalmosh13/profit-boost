@@ -4,13 +4,11 @@ import Logo from './Logo'
 import { PRICE_LAUNCH, PRICE_FULL, CURRENCY } from '../config/integration'
 import './Hero.css'
 
-// Trust badges — edit copy here.
+// Trust badges — the 3 strongest only, to keep the hero focused.
 const badges = [
   '⚡ גישה מיידית',
   '📊 כולל אקסל מוכן',
-  '🎬 שיעורים קצרים ופרקטיים',
   '🙌 מתאים גם למי ששונאת מספרים',
-  '💅 נבנה במיוחד לבעלות עסקים בתחום היופי',
 ]
 
 /**
@@ -31,15 +29,12 @@ export default function Hero() {
             הגיע הזמן להבין כמה באמת נשאר.
           </h1>
           <p className="hero__subhead">
-            תוכנית פרקטית וקצרה למניקוריסטיות ובעלות עסק בתחום היופי — לתמחר נכון,
-            להעלות מחירים בביטחון ולדעת בדיוק כמה נשאר בסוף החודש.
+            תוכנית קצרה ופרקטית למניקוריסטיות ובעלות עסק ביופי — לתמחר נכון ולדעת
+            כמה באמת נשאר.
           </p>
 
           <div className="hero__cta">
             <CTAButton>אני רוצה להתחיל את Profit Boost</CTAButton>
-            <a href="#calculator" className="hero__secondary">
-              נסי קודם את המחשבון ↓
-            </a>
           </div>
 
           <p className="hero__price">
