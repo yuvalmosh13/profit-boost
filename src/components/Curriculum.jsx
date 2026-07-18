@@ -13,7 +13,7 @@ export default function Curriculum() {
     <section className="section section--alt" aria-labelledby="curriculum-title">
       <div className="container">
         <Reveal className="text-center">
-          <span className="eyebrow">תוכן הקורס · {modules.length} שיעורים</span>
+          <span className="eyebrow">תוכן הקורס · {modules.length} פרקים</span>
           <h2 id="curriculum-title" className="section-title">
             מה תלמדי בתוך Profit Boost?
           </h2>
