@@ -12,7 +12,7 @@ export const includedItems = [
 
 // Downloadable tools / templates that come with the course.
 export const bonusItems = [
-  'קובץ אקסל מוכן לניהול העסק',
+  'קובץ אקסל מוכן לניהול העסק — כולל צ׳קליסט חודשי ושנתי',
   'PDF: הוצאות מוכרות בעסק',
   'נוסח מוכן להודעה ללקוחות על העלאת מחיר',
 ]
